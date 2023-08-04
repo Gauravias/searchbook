@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--gaurav tripathi-->
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Finder</title>
+  <link rel="shortcut icon" href="./img/reading.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+<body class="bg">
+  <script>
+    // this script need to in body but before html content to avoid flickering
+    const localTheme = localStorage?.getItem("theme");
+    if (localTheme === "dark") {
+      document.body.classList.add("dark-theme");
+    } else {
+      document.body.classList.remove("dark-theme");
+    }
+  </script>
+
+  <nav id="nav">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/index.html">
+        <span class="text">Search</span><span class="find">Books</span>  <span class="text">By Gaurav Tripathi</span>
+      </a>
+      <div class="mode">
+        <img class="logo" id="icon" src="img/lp.png" />
+  
+      </div>
+    </div>
+  </nav>
+  <header class="header" id="header">
+    <img src="img/logo.gif" alt="People searching for books" class="illustration" />
+    <h1 class="title">
+      Search
+      <p class="finder" style="display: inline-block">Your Fav Book</p>
+    </h1>
+  </header>
+  <main>
+    <div class="search" id="search-bar">
+      <form class="search-form">
+        <div class="rounded rounded-pill shadow-sm mb-5">
+          <div class="input-group">
+            <div id="material-input">
+              <input type="search" id="input" placeholder="Find the book you want to read next!"
+              aria-describedby="button-addon1" class="form-control border-0 " />
+              <label for="input">Type Your Book Name here !!</label>
+            </div>
+            <div class="input-group-append">
+              <button id="button-addon1" type="submit" class="btn btn-link text-primary">
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+  <section>
+    <div class="whirly-loader" style="display: none;"></div>
+    <div id="results" class="results container">
+    </div>
+  </section>
+  <a href="#" id="return-to-top" class="special1" > 
+    <i class="fa fa-arrow-up" ></i>
+  </a>
+</body>
+<!--gaurav tripathi-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+        offset: 200,
+        duration: 1000
+    });
+</script>
+<script src="main.js"></script>
+</body>
+
+</html>
